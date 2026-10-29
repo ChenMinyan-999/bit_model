@@ -1,0 +1,14 @@
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+
+# Python 缓存/构建产物（建议一起忽略）
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
