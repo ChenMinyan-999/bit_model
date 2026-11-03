@@ -1,0 +1,27 @@
+{
+  "backend": "vllm",
+  "model": "/root/autodl-tmp/models/Qwen2.5-7B-Instruct",
+  "episodes": 10,
+  "transitions": 237,
+  "obs_shift": "next",
+  "seed": 42069,
+  "temperature": 0.9,
+  "top_p": 0.6,
+  "max_tokens": 2000,
+  "episode_returns": [
+    11.0,
+    16.0,
+    18.0,
+    22.0,
+    28.0,
+    19.0,
+    13.0,
+    34.0,
+    35.0,
+    41.0
+  ],
+  "mean_return": 23.7,
+  "max_return": 41.0,
+  "parse_fail": 0,
+  "wall_seconds": 212.9
+}

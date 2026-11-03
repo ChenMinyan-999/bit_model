@@ -1,0 +1,27 @@
+{
+  "variant": "online",
+  "label": "llm",
+  "run": 0,
+  "seed": 42069,
+  "n_eval": 3,
+  "pretrain": false,
+  "prefill": false,
+  "pretrain_steps": 0,
+  "target_update_interval": 1000,
+  "curve": [
+    9.0,
+    10.0,
+    9.0
+  ],
+  "summary": {
+    "n_points": 3,
+    "cum_reward": 28.0,
+    "mean_reward": 9.333333333333334,
+    "max_possible": 600.0,
+    "frac_of_max": 0.04666666666666667,
+    "last20_mean": 9.333333333333334,
+    "first10_mean": 9.333333333333334,
+    "auc_norm": 0.0475
+  },
+  "wall_seconds": 30.2
+}

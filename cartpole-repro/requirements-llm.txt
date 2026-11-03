@@ -1,0 +1,20 @@
+# LLM 侧依赖：单独建一个 conda/venv 环境，不要和 RL 环境混装
+# （vllm 会钉死自己的 torch 版本，和 d3rlpy 那套 torch 冲突）
+#
+# RTX PRO 6000 / Blackwell (sm_120) 必须用较新的 vLLM：
+#   vLLM >= 0.8.5 才开始支持 sm_120；0.9.x / 0.10.x 更稳。
+#   装完先跑：python scripts/99_gpu_check.py --vllm <模型路径>
+#
+# 若 vllm 装完报 "no kernel image is available"：
+#   pip uninstall -y torch && pip install torch==2.7.0 --index-url https://download.pytorch.org/whl/cu128
+vllm==0.9.2
+
+# 用法：
+#   pip install -r requirements-llm.txt
+#   python scripts/02_collect.py --backend vllm --model Qwen/Qwen2.5-7B-Instruct \
+#       --episodes 10 --parallel 8 --out data/cartpole_llm_neps10.npz
+#
+# 国内下载模型：
+#   export HF_ENDPOINT=https://hf-mirror.com
+#
+# 显存（bf16）：7B ≈ 15.2 GB；14B ≈ 29 GB；32B ≈ 65.6 GB（96 GB 卡可以跑，24 GB 不行）

@@ -1,0 +1,20 @@
+# RL 侧依赖：**CPU 就够**，不需要 GPU 版 torch
+# 推荐 Python 3.10，Ubuntu 22.04
+#
+# 注意安装顺序（先把 CPU 版 torch 装上，d3rlpy 才不会去拉 2.5 GB 的 CUDA 版）：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements-rl.txt
+#
+# 好处：与显卡型号（含 RTX PRO 6000 / Blackwell / 国产卡）完全无关，
+#       d3rlpy 在 CartPole 上跑 3 万步只要几分钟，用 GPU 反而更慢。
+
+gymnasium==0.29.1
+numpy==1.26.4
+d3rlpy==2.6.0
+matplotlib==3.8.4
+
+# 说明：
+#  * d3rlpy 2.6.0 是纯 Python 包（py3-none-any），依赖 torch>=2.0、gym、gymnasium；
+#    先装 gymnasium==0.29.1 再装 d3rlpy，避免被拉到 gymnasium 1.x。
+#  * numpy 必须 <2（d3rlpy 2.6 与作者 2025-04 的代码都在 numpy 1.x 下产生）。
+#  * 只有想加载作者 models/*.pkl 时才需要匹配 d3rlpy 版本；建议不加载，自己预训练 3k 步。

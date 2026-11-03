@@ -1,0 +1,26 @@
+{
+  "variant": "loro",
+  "label": "llm",
+  "run": 0,
+  "seed": 42069,
+  "n_eval": 2,
+  "pretrain": true,
+  "prefill": false,
+  "pretrain_steps": 50,
+  "target_update_interval": 200,
+  "curve": [
+    9.0,
+    11.0
+  ],
+  "summary": {
+    "n_points": 2,
+    "cum_reward": 20.0,
+    "mean_reward": 10.0,
+    "max_possible": 400.0,
+    "frac_of_max": 0.05,
+    "last20_mean": 10.0,
+    "first10_mean": 10.0,
+    "auc_norm": 0.05
+  },
+  "wall_seconds": 37.0
+}
